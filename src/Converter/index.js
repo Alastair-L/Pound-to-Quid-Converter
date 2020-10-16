@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from '@material-ui/core';
 
 export const Converter = () => {
   const [amount, setAmount] = React.useState(0);
@@ -8,16 +9,13 @@ export const Converter = () => {
       display: 'flex',
       direction: 'row',
       alignItems: 'baseline',
+      justifyContent: 'space-between',
+      wrap: true,
     }}>
-      <h1> Covert </h1>
-      <input id='5' type='text' height='500' />
-      <h1> Pound(s): </h1>
-      <button onClick={() => {
-        const hi = document.getElementById('5').value;
-        console.log(hi);
-        setAmount(hi);
-      }}>submit</button>
-      <h1> {amount} </h1>
+      <h1> Convert </h1>
+      <Input width={'500px'} onChange={(someInput) => console.log(someInput) || setAmount(someInput.target.value)} placeholder='how many quids?' type='text' height='500' />
+      <h1> Pound(s):  </h1>{' '}
+      <h1> {amount ?? null} </h1>
     </div>
   );
 };

@@ -6,13 +6,27 @@ import { MuiThemeProvider as V0MuiThemeProvider } from 'material-ui';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
-const DARKENED_BLUE = '#0296c5';
 
 export const AppStyleProviders = ({ children }) => {
   return (
     <StylesProvider injectFirst>
       <MuiThemeProvider
-        theme={createMuiTheme({ palette: { type: 'dark', primary: { main: DARKENED_BLUE } } })}
+        theme={createMuiTheme({
+          palette: {
+            primary: {
+              light: '#757ce8',
+              main: '#3f50b5',
+              dark: '#002884',
+              contrastText: '#fff',
+            },
+            secondary: {
+              light: '#ff7961',
+              main: '#f44336',
+              dark: '#ba000d',
+              contrastText: '#000',
+            },
+          },
+        })}
       >
         <V0MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>{children}</V0MuiThemeProvider>
       </MuiThemeProvider>

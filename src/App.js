@@ -4,7 +4,7 @@ import { HistoricalChart } from './HistoricalChart';
 import { AppStyleProviders } from './AppStyleProviders';
 
 const RootScreen = () => (
-  <div>
+  <div style={{background:"black", color: 'white'}} width="100%" height="100%">
     <Converter />
     <HistoricalChart />
   </div>
