@@ -11,11 +11,12 @@ export const Converter = () => {
       alignItems: 'baseline',
       justifyContent: 'space-between',
       wrap: true,
+      width: '800px',
     }}>
       <h1> Convert </h1>
-      <Input width={'500px'} onChange={(someInput) => console.log(someInput) || setAmount(someInput.target.value)} placeholder='how many quids?' type='text' height='500' />
+      <Input color='primary' width={'500px'} onChange={(someInput) => console.log(someInput) || setAmount(someInput.target.value)} placeholder='how many quids?' type='text' height='500'  />
       <h1> Pound(s):  </h1>{' '}
-      <h1> {amount ?? null} </h1>
+      <h1> {amount ? `${amount} quids` : null} </h1>
     </div>
   );
 };

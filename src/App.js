@@ -1,12 +1,14 @@
 import React from 'react';
 import { Converter } from './Converter';
 import { HistoricalChart } from './HistoricalChart';
+import Footer from './Footer';
 import { AppStyleProviders } from './AppStyleProviders';
 
 const RootScreen = () => (
-  <div style={{background:"black", color: 'white'}} width="100%" height="100%">
+  <div  width="100%" height="100%">
     <Converter />
     <HistoricalChart />
+    <Footer />
   </div>
 )
 
