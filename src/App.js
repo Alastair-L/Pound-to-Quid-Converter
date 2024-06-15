@@ -1,14 +1,25 @@
 import React from 'react';
-import { Converter } from './Converter';
-import { HistoricalChart } from './HistoricalChart';
+import { Converter } from './Components/Converter';
+import { HistoricalChart } from './Components/HistoricalChart';
+import Footer from './Components/Footer';
+import ExchangeRate from './Components/ExchangeRate';
+import { AppStyleProviders } from './AppStyleProviders';
 
-function App() {
+const RootScreen = () => (
+  <div  width="100%" height="100%">
+    <Converter />
+    <HistoricalChart />
+    <ExchangeRate />
+    <Footer />
+  </div>
+)
+
+
+const App = () => {
+  console.log('loading...');
   return (
-    <div>
-      <Converter />
-      <HistoricalChart />
-    </div>
+    <AppStyleProviders>{RootScreen ? <RootScreen /> : null}</AppStyleProviders>
   );
-}
+};
 
 export default App;
